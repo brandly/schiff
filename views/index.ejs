@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="schiff">
   <head>
     <title><%= title %></title>
 
@@ -17,6 +17,12 @@
       <input ng-model="newMessageText" type="text" />
       <input type="submit" value="Submit" />
     </form>
+
+    <ul class="unstyled">
+      <li ng-repeat="message in messages">
+        <p>{{message.text}}</p>
+      </li>
+    </ul>
 
   </body>
 </html>
