@@ -3,6 +3,7 @@
   <head>
     <title><%= title %></title>
 
+    <link rel='stylesheet' href='/stylesheets/normalize.css' />
     <link rel='stylesheet' href='/stylesheets/style.css' />
 
     <script src="/javascripts/angular.js"></script>
@@ -10,16 +11,15 @@
     <script src="/javascripts/schiff.js"></script>
   </head>
   <body ng-controller="MessageCtrl">
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <h1>Send <%= title %> a message</h1>
 
     <form ng-submit="sendMessage()">
-      <input ng-model="newMessageText" type="text" />
+      <input ng-model="newMessageText" type="text" placeholder="message" autofocus="autofocus" />
       <input type="submit" value="Submit" />
     </form>
 
-    <ul class="unstyled">
-      <li ng-repeat="message in messages">
+    <ul class="messages">
+      <li ng-repeat="message in messages" class="message">
         <p>{{message.text}}</p>
       </li>
     </ul>
