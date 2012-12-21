@@ -11,18 +11,23 @@
     <script src="/javascripts/schiff.js"></script>
   </head>
   <body ng-controller="MessageCtrl">
-    <h1>Send <%= title %> a message</h1>
+    <div class="container">
+      <div class="input">
+        <h1><%= title %></h1>
 
-    <form ng-submit="sendMessage()">
-      <input ng-model="newMessageText" type="text" placeholder="message" autofocus="autofocus" />
-      <input type="submit" value="Submit" />
-    </form>
+        <form ng-submit="sendMessage()">
+          <input ng-model="newMessageText" type="text" placeholder="message" autofocus="autofocus" />
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
 
-    <ul class="messages">
-      <li ng-repeat="message in messages" class="message">
-        <p>{{message.text}}</p>
-      </li>
-    </ul>
+      <ul class="messages">
+        <li ng-repeat="message in messages" class="message">
+          <p>{{message.text}}</p>
+        </li>
+      </ul>
 
+
+    </div>
   </body>
 </html>

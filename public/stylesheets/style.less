@@ -1,32 +1,38 @@
-body {
-  padding: 50px;
-  font: 14px BentonSans, 'Lucida Sans', 'Lucida Grande', sans-serif;
-  color: #444;
-}
 
-a {
-  color: #00B7FF;
-}
+@leftWidth: 400px;
 
-h1 {
-  text-transform: uppercase;
-  color: #555;
-}
 
-.messages {
-  list-style: none;
-  margin: 0;
+.container {
+  position: relative;
+  width: 960px;
+  margin: 0 auto;
   padding: 0;
+  padding-top: 60px;
 
-  .message {
+  .input {
+    width: @leftWidth;
+    position: fixed;
     padding: 0 10px;
-    border-bottom: 1px solid #ddd;
+  }
 
-    &:first-child {
-      border-top: 1px solid #ddd;
+  .messages {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    padding-left: @leftWidth;
+
+    .message {
+      padding: 0 10px;
+      border-bottom: 1px solid #ddd;
+
+      &:first-child {
+        border-top: 1px solid #ddd;
+      }
     }
   }
 }
+
+
 
 form {
 
@@ -41,9 +47,7 @@ form {
     border: 0;
     outline: none;
     color: #393939;
-    font-size: 130px;
     font-weight: 700;
-    text-transform: uppercase;
 
     width: 100%;
   }

@@ -1,25 +1,26 @@
-body {
-  padding: 50px;
-  font: 14px BentonSans, 'Lucida Sans', 'Lucida Grande', sans-serif;
-  color: #444;
+.container {
+  position: relative;
+  width: 960px;
+  margin: 0 auto;
+  padding: 0;
+  padding-top: 60px;
 }
-a {
-  color: #00B7FF;
+.container .input {
+  width: 400px;
+  position: fixed;
+  padding: 0 10px;
 }
-h1 {
-  text-transform: uppercase;
-  color: #555;
-}
-.messages {
+.container .messages {
   list-style: none;
   margin: 0;
   padding: 0;
+  padding-left: 400px;
 }
-.messages .message {
+.container .messages .message {
   padding: 0 10px;
   border-bottom: 1px solid #ddd;
 }
-.messages .message:first-child {
+.container .messages .message:first-child {
   border-top: 1px solid #ddd;
 }
 form input[type='submit'] {
@@ -32,8 +33,6 @@ form input[type='text'] {
   border: 0;
   outline: none;
   color: #393939;
-  font-size: 130px;
   font-weight: 700;
-  text-transform: uppercase;
   width: 100%;
 }
