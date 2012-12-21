@@ -7,10 +7,32 @@
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+
+    <form id="form">
+      <input id="message-input" type="text" />
+      <input type="submit" value="Submit" />
+    </form>
   </body>
 
+  <script src="/javascripts/jquery-1.8.3.min.js"></script>
   <script src="/javascripts/socket.io.js"></script>
-    <script>
-      var socket = io.connect();
-    </script>
+  <script>
+    var socket = io.connect();
+
+    $('#form').submit(function (e) {
+      var input = $('#message-input'),
+          text = input.val();
+      input.val('');
+
+      socket.emit('messageToServer', {
+        text: text
+      });
+      return false;
+    });
+
+    socket.on('messageToClient', function (data) {
+      console.log(data.text);
+    });
+
+  </script>
 </html>
