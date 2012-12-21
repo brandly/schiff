@@ -42,7 +42,6 @@ var io = socket.listen(server);
 
 // Handles socket for each individual connection
 io.on('connection', function (socket) {
-  console.log('connection...');
 
   // Binding to local socket
   socket.on('messageToServer', function (data) {
