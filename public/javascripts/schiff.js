@@ -36,15 +36,18 @@ function MessageCtrl ($scope, socket) {
   $scope.messages = [];
 
   $scope.sendMessage = function () {
-    socket.emit('messageToServer', {
-      text: $scope.newMessageText
-    });
+    var text = $scope.newMessageText;
+    if (text !== '') {
+      socket.emit('messageToServer', {
+        text: $scope.newMessageText
+      });
 
-    $scope.newMessageText = '';
+      $scope.newMessageText = '';
+    }
   };
 
   $scope.incomingHandler = function (data) {
-    $scope.messages.push({
+    $scope.messages.unshift({
       text: data.text
     });
   };
