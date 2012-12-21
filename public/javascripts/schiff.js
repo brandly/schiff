@@ -2,24 +2,19 @@
  * Schiff.js
  */
 
-!function (window, jQuery, undefined) {
-
+function MessageCtrl ($scope) {
   // Connect to socket at current address
   var socket = io.connect();
 
-  $('#form').submit(function (e) {
-    var input = $('#message-input'),
-        text = input.val();
-    input.val('');
-
+  $scope.sendMessage = function () {
     socket.emit('messageToServer', {
-      text: text
+      text: $scope.newMessageText
     });
-    return false;
-  });
+
+    $scope.newMessageText = '';
+  };
 
   socket.on('messageToClient', function (data) {
     console.log(data.text);
   });
-
-}(window, jQuery);
+}
