@@ -39,7 +39,7 @@ function MessageCtrl ($scope, socket) {
     var text = $scope.newMessageText;
     if (text !== '') {
       socket.emit('messageToServer', {
-        text: $scope.newMessageText
+        text: text
       });
 
       $scope.newMessageText = '';
