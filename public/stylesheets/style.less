@@ -1,10 +1,10 @@
 
 @leftWidth: 400px;
-
+@containerWidth: 960px;
 
 .container {
   position: relative;
-  width: 960px;
+  width: @containerWidth;
   margin: 0 auto;
   padding: 0;
   padding-top: 60px;
@@ -32,8 +32,6 @@
   }
 }
 
-
-
 form {
 
   input[type='submit'] {
@@ -50,5 +48,45 @@ form {
     font-weight: 700;
 
     width: 90%;
+  }
+}
+
+.sizing(@container, @sidebar){
+  .container {
+    width: @container;
+
+    .input {
+      width: @sidebar;
+    }
+
+    .messages {
+      padding-left: @sidebar;
+    }
+  }
+}
+
+/* Tablet Portrait size to standard 960 (devices and browsers) */
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+  .sizing(768px, 300px);
+}
+
+/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  .sizing(480px, 200px);
+}
+
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+@media only screen and (max-width: 479px) {
+  .container {
+    width: 100%;
+
+    .input {
+      position: relative;
+      width: 100%;
+    }
+
+    .messages {
+      padding-left: 0;
+    }
   }
 }
