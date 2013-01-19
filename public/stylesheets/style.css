@@ -36,6 +36,11 @@ form input[type='text'] {
   font-weight: 700;
   width: 90%;
 }
+#schiff-face {
+  position: fixed;
+  bottom: -32px;
+  right: -75px;
+}
 /* Tablet Portrait size to standard 960 (devices and browsers) */
 @media only screen and (min-width: 768px) and (max-width: 959px) {
   .container {
@@ -68,6 +73,7 @@ form input[type='text'] {
   .container .input {
     position: relative;
     width: 100%;
+    padding: 0;
   }
   .container .messages {
     padding-left: 0;
