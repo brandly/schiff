@@ -1,6 +1,6 @@
 # Schiff
 
-Realtime chat with the one and only Alex Schiff.
+A silly, little chat server, of sorts. More than anything, this is an excuse to play with Node and Socket.io and AngularJS.
 
 ## How to Run
 
